@@ -62,5 +62,3 @@ def udp_json_sender(host, port):
 
     # Close socket when data has been sent
     client_socket.close()
-
-

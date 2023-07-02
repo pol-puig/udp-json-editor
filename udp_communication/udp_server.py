@@ -94,8 +94,3 @@ def udp_json_modifier(host, port, mutex):
             # Override json file and make more modifications, if user wants
             override_json_file(json_data)
             con.make_more_modifications()
-
-
-
-
-

@@ -30,12 +30,5 @@ def main():
     client_thread.join()
     server_thread.join()
 
-
-
 if __name__ == '__main__':
     main()
-
-
-
-
-

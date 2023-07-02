@@ -1,3 +1,7 @@
+"""
+Reads user's desired JSON file and sends it to a listening server.
+"""
+
 import socket
 from json_handler.json_operators import JsonReader
 from interface import console_interface as con
@@ -38,17 +42,25 @@ def get_udp_message(json_data):
     return message
 
 def udp_json_sender(host, port):
+    """Sends JSON data to a host address via UDP and IPv4
 
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    logging.info("Client socket successfully created")
+    Args:
+        host: Host address of the server receiving the data
+        port: Port for the communication
+    """
 
+    # Get file to be sent and transform it so it can be sent over UDP
     json_data = get_json_data()
+    print(json_data)
     udp_message = get_udp_message(json_data)
 
+    # Configure socket as IPv4 and UDP and sends it
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    logging.info("Client socket successfully created")
     client_socket.sendto(udp_message, (host, port))
     logging.info("Thread1 sent message to thread2 successfully")
 
-
+    # Close socket when data has been sent
     client_socket.close()
 
 

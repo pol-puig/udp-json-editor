@@ -1,1 +1,35 @@
-{"cars": [{"id": "prova", "name": "olaaa", "brand": "kaseee"}, {"id": 2, "name": "Formentor", "brand": "Cupra"}, {"id": 3, "name": "Arteon", "brand": "VW"}], "users": [{"id": 1, "name": "lol", "email": "juan@akkodis.com", "favourite_cars": [2, 3]}, {"id": 2, "name": "Mar\u00eda", "email": "maria@akkodis.com", "favourite_cars": [3]}, {"id": 3, "name": "Pedro", "email": "pedro@akkodis.com", "favourite_cars": [1, 2]}]}
+{
+       "cars": [
+		{ "id": 1, "name": "Ateca", "brand": "SEAT"},
+		{ "id": 2, "name": "Formentor", "brand": "Cupra"},
+		{ "id": 3, "name": "Arteon", "brand": "VW"}
+	],
+		"users": [
+		  {
+			"id": 1,
+			"name": "Juan",
+			"email": "juan@akkodis.com",
+			"favourite_cars": [
+			  2,
+			  3
+			]
+		  },
+		  {
+			"id": 2,
+			"name": "María",
+			"email": "maria@akkodis.com",
+			"favourite_cars": [
+			  3
+			]
+		  },
+		  {
+			"id": 3,
+			"name": "Pedro",
+			"email": "pedro@akkodis.com",
+			"favourite_cars": [
+			  1,
+			  2
+			]
+		  }
+		]
+}

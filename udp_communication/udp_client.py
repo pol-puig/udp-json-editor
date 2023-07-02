@@ -1,11 +1,19 @@
 import socket
-import json
-import threading
 from json_handler.json_operators import JsonReader
 from interface import console_interface as con
 import logging
+import json
 
 def get_json_data():
+    """Gets data from a JSON file and stores it in a class.
+
+    Returns:
+        JsonReader: An initialized instance with json attributes and path to file
+
+    Raises:
+        FileNotFoundError: If the path is incorrect
+    """
+    # Keeps asking the user for a path to the file until it is correct
     while True:
         try:
             json_path = con.get_user_json_path()
@@ -16,6 +24,14 @@ def get_json_data():
     return json_data
 
 def get_udp_message(json_data):
+    """Transforms JSON attributes and path into an encoded message for UDP communication
+
+    Args:
+        json_data: Instance of JsonReader to encode its attributes
+
+    Returns:
+        bytes: Encoded attribute message
+    """
     message = json_data.attributes
     message["json_path"] = json_data.path
     message = json.dumps(message, ensure_ascii=False).encode()
